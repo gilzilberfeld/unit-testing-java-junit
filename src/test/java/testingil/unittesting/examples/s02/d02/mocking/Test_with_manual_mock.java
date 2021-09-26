@@ -1,9 +1,8 @@
 package testingil.unittesting.examples.s02.d02.mocking;
 
+import static org.junit.jupiter.api.Assertions.*;
 
-import static org.testng.Assert.assertFalse;
-
-import org.testng.annotations.Test;
+import org.junit.jupiter.api.Test;
 
 class Test_with_manual_mock{
 

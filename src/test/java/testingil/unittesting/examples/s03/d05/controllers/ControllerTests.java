@@ -1,25 +1,24 @@
 package testingil.unittesting.examples.s03.d05.controllers;
 
+import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.when;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
-import static org.testng.Assert.assertEquals;
 
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 import org.mockito.Answers;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.test.context.ContextConfiguration;
-import org.springframework.test.context.testng.AbstractTestNGSpringContextTests;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.MvcResult;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.Test;
 
 @SpringBootTest
 @ContextConfiguration(classes = { ItemConfiguration.class })
-public class ControllerTests extends AbstractTestNGSpringContextTests {
+public class ControllerTests{
 
 	@MockBean(answer = Answers.RETURNS_DEEP_STUBS)
 	@Autowired
@@ -30,7 +29,7 @@ public class ControllerTests extends AbstractTestNGSpringContextTests {
 
 	MockMvc mockMvc;
 
-	@BeforeMethod
+	@BeforeEach
 	public void setup() {
 		mockMvc = MockMvcBuilders.standaloneSetup(controller).build();
 	}

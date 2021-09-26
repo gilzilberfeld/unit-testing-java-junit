@@ -1,13 +1,13 @@
 package testingil.unittesting.examples.s02.d03.mocking.mockito;
 
+import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.atLeast;
 import static org.mockito.Mockito.mock;
-import static org.testng.Assert.assertEquals;
 
+import org.junit.jupiter.api.Test;
 import org.mockito.ArgumentCaptor;
 import org.mockito.Mockito;
-import org.testng.annotations.Test;
 
 import testingil.unittesting.examples.s02.d02.mocking.ACMode;
 import testingil.unittesting.examples.s02.d02.mocking.AirCondition;

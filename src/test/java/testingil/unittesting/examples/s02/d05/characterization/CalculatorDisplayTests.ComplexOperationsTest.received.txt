@@ -1,4 +1,0 @@
-Pressed 1, Display shows: 1
-Pressed +, Display shows: 1
-Pressed 2, Display shows: 2
-Pressed =, Display shows: 3

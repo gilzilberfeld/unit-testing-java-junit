@@ -1,21 +1,23 @@
 package testingil.unittesting.examples.s02.d05.characterization;
 
 import org.approvaltests.Approvals;
-import org.testng.annotations.BeforeTest;
-import org.testng.annotations.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 public class CalculatorDisplayTests {
 
 	CalculatorDisplay cd;
 	TestLogger log;
 	
-	@BeforeTest
+	@BeforeEach
 	public void setup() {
 		cd = new CalculatorDisplay();
 		log = new TestLogger();
 	}
 	
-	@Test(enabled = true)
+	@Test
+	@Disabled
 	public void CheckDisplayTest() throws Exception
 	{
 		cd.press("1");
@@ -23,7 +25,8 @@ public class CalculatorDisplayTests {
 	}
 	
 	
-	@Test(enabled = false)
+	@Test
+	@Disabled
 	public void ComplexOperationsTest() throws Exception	{
 		pressSequence("1+2=");
 		Approvals.verify(log.getAll());

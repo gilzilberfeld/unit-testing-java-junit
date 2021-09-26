@@ -1,13 +1,14 @@
 package testingil.unittesting.examples.s03.ex;
 
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.context.testng.AbstractTestNGSpringContextTests;
-import org.testng.annotations.Test;
 
 @SpringBootTest
-public class CalculatorDisplaySpringTests extends AbstractTestNGSpringContextTests {
+public class CalculatorDisplaySpringTests {
 
-	@Test(enabled = false)
+//	@Test
+//	@Disabled
 	public void firstTest() {
 
 	}

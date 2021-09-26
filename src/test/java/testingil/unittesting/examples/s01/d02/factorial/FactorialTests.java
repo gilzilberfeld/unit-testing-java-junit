@@ -1,10 +1,8 @@
 package testingil.unittesting.examples.s01.d02.factorial;
 
-import static org.testng.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.*;
 
-import org.testng.annotations.Test;
-
-import testingil.unittesting.examples.s01.d02.factorial.Factorial;
+import org.junit.jupiter.api.Test;
 
 public class FactorialTests {
 

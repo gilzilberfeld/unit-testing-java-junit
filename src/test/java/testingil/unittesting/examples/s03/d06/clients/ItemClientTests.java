@@ -5,27 +5,26 @@ import static org.springframework.test.web.client.match.MockRestRequestMatchers.
 import static org.springframework.test.web.client.response.MockRestResponseCreators.withBadRequest;
 import static org.springframework.test.web.client.response.MockRestResponseCreators.withSuccess;
 
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.MediaType;
 import org.springframework.test.context.ContextConfiguration;
-import org.springframework.test.context.junit4.SpringRunner;
-import org.springframework.test.context.testng.AbstractTestNGSpringContextTests;
 import org.springframework.test.web.client.MockRestServiceServer;
 import org.springframework.web.client.RestTemplate;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.Test;
 
 @SpringBootTest
 @ContextConfiguration(classes= {ItemClientConfiguration.class})
-public class ItemClientTests extends AbstractTestNGSpringContextTests{
+public class ItemClientTests{
 	
 	@Autowired RestTemplate template;
 	@Autowired ItemClient	client;
 	
 	MockRestServiceServer mockServer;
 	
-	@BeforeMethod
+	@BeforeEach
 	public void setup() {
 		mockServer = MockRestServiceServer.createServer(template);
 	}
@@ -40,11 +39,14 @@ public class ItemClientTests extends AbstractTestNGSpringContextTests{
 		mockServer.verify();
 	}
 	
-	@Test(expectedExceptions = { ItemNotFoundException.class })
+	@Test
 	public void add_ThrowsOnError() {
 		mockServer.expect(once(), requestTo("/items/"))
 			.andRespond(withBadRequest());
-		client.getAllItems();
+		Assertions.assertThrows(ItemNotFoundException.class, ()->{
+			client.getAllItems();
+		});
+		
 	}
 }
 

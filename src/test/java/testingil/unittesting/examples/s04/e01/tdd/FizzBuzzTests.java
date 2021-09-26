@@ -1,6 +1,6 @@
 package testingil.unittesting.examples.s04.e01.tdd;
 
-import org.testng.annotations.Test;
+import org.junit.jupiter.api.Test;
 
 class FizzBuzzTests {
 

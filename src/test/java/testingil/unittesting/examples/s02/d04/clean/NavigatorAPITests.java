@@ -3,7 +3,6 @@ package testingil.unittesting.examples.s02.d04.clean;
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.lessThan;
-import static org.mockito.Mockito.reset;
 import static org.mockito.Mockito.when;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
@@ -22,11 +21,6 @@ import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-
-import testingil.unittesting.examples.s02.d04.clean.Distance;
-import testingil.unittesting.examples.s02.d04.clean.DistanceProvider;
-import testingil.unittesting.examples.s02.d04.clean.Location;
-import testingil.unittesting.examples.s02.d04.clean.NavigationController;
 
 @WebMvcTest
 @ContextConfiguration(classes = NavigatorAPITestsConfig.class)

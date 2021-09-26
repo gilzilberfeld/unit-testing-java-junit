@@ -1,10 +1,10 @@
 package testingil.unittesting.examples.s02.d03.mocking.mockito;
 
+import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
-import static org.testng.Assert.assertFalse;
 
-import org.testng.annotations.Test;
+import org.junit.jupiter.api.Test;
 
 import testingil.unittesting.examples.s02.d02.mocking.Car;
 import testingil.unittesting.examples.s02.d02.mocking.Driver;

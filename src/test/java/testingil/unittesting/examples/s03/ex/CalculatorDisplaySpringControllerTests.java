@@ -4,22 +4,19 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.ContextConfiguration;
-import org.springframework.test.context.testng.AbstractTestNGSpringContextTests;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.MvcResult;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.Test;
-
-import testingil.unittesting.examples.s03.d05.controllers.ItemConfiguration;
-import static org.testng.Assert.assertEquals;
 
 @SpringBootTest
 @ContextConfiguration(classes = { CalculatorControllerConfiguration.class })
-public class CalculatorDisplaySpringControllerTests extends AbstractTestNGSpringContextTests {
+public class CalculatorDisplaySpringControllerTests{
 
 	MockMvc mockMvc;
 
@@ -29,10 +26,10 @@ public class CalculatorDisplaySpringControllerTests extends AbstractTestNGSpring
 	@Test
 	public void firstTest() throws Exception {
 		pressSequence("1");
-		assertEquals(getDisplay(), "1");
+		Assertions.assertEquals(getDisplay(), "1");
 	}
 
-	@BeforeMethod
+	@BeforeEach
 	public void setup() {
 		mockMvc = MockMvcBuilders.standaloneSetup(controller).build();
 	}

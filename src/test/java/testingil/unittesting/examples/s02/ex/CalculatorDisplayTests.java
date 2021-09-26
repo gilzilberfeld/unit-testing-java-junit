@@ -1,6 +1,6 @@
 package testingil.unittesting.examples.s02.ex;
 
-import org.testng.annotations.Test;
+import org.junit.jupiter.api.Test;
 
 public class CalculatorDisplayTests {
 
