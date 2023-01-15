@@ -109,7 +109,7 @@ test-output/Default suite/Default test.xml
 test-output/Default suite/testng-failed.xml
 test-output/emailable-report.html
 test-output/index.html
-test-output/junitreports/TEST-testingil.unittesting.examples.s03.d06.clients.ItemClientTests.xml
+test-output/junitreports/TEST-clients.d06.testingil.unittesting.examples.demos.d05.ItemClientTests.xml
 test-output/old/Default suite/classes.html
 test-output/old/Default suite/methods-alphabetical.html
 test-output/old/Default suite/methods.html
