@@ -29,19 +29,4 @@ public class GildedRose {
         }
     }
 
-    private void DecreaseSellIn(Item item)
-    {
-        item.sellIn = item.sellIn - 1;
-    }
-
-    private void IncreaseQuality(Item item)
-    {
-        item.quality = item.quality + 1;
-    }
-
-    private void DecreaseQuality(Item item)
-    {
-        item.quality = item.quality - 1;
-    }
-
 }
