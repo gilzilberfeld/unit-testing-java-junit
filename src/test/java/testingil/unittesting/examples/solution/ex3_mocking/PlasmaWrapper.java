@@ -4,7 +4,7 @@ public class PlasmaWrapper implements ExternalDisplay{
 
     @Override
     public void show(String text) {
-        // PlasmaScreen.show(text)
+         PlasmaScreen.show(text);
     }
 
     @Override

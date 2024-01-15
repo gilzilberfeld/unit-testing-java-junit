@@ -4,7 +4,8 @@ package testingil.unittesting.examples.solution.ex1_basic_tests;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 
 // 3. Refactor tests
 public class CalculatorDisplayTests_b {

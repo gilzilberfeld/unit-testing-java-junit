@@ -1,5 +1,6 @@
 package testingil.unittesting.examples.demos.d05.spring.d03.lifecycle;
 
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -22,6 +23,7 @@ public class RegularInjectionTest {
     }
 
     @Test
+    @Disabled("Mock retention problem")
     public void test_zero_calls() {
         verify(mockRepository,never()).findTotal();
     }

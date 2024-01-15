@@ -3,7 +3,8 @@ package testingil.unittesting.examples.solution.ex1_basic_tests;
 
 import org.junit.jupiter.api.Test;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 
 // 1. Write tests
 // 2. Incremental coding
