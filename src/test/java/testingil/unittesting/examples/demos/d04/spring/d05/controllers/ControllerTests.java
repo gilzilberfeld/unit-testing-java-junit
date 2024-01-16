@@ -1,10 +1,5 @@
 package testingil.unittesting.examples.demos.d04.spring.d05.controllers;
 
-import static org.junit.jupiter.api.Assertions.*;
-import static org.mockito.Mockito.when;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
-
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Answers;
@@ -15,6 +10,11 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.MvcResult;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
+
+import static org.assertj.core.api.Assertions.assertThat;
+import static org.mockito.Mockito.when;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 @SpringBootTest
 @ContextConfiguration(classes = { ItemConfiguration.class })
@@ -38,7 +38,7 @@ public class ControllerTests{
 	public void when_no_items_returns_error() throws Exception {
 		setupRepositoryToReturn(0);
 		String result = callGetAllItems_error();
-		assertEquals(result, "Error");
+		assertThat(result).isEqualTo("Error");
 	}
 
 	private String callGetAllItems_error() throws Exception {

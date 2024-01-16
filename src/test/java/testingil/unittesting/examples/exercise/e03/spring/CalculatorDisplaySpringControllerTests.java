@@ -1,10 +1,5 @@
 package testingil.unittesting.examples.exercise.e03.spring;
 
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
-
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,6 +8,11 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.MvcResult;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
+
+import static org.assertj.core.api.Assertions.assertThat;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 @SpringBootTest
 @ContextConfiguration(classes = { CalculatorControllerConfiguration.class })
@@ -26,7 +26,7 @@ public class CalculatorDisplaySpringControllerTests{
 	@Test
 	public void firstTest() throws Exception {
 		pressSequence("1");
-		Assertions.assertEquals(getDisplay(), "1");
+		assertThat(getDisplay()).isEqualTo("1");
 	}
 
 	@BeforeEach

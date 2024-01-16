@@ -1,11 +1,11 @@
 package testingil.unittesting.examples.demos.d04.spring.d01.configuration;
 
-import javax.sql.DataSource;
-
 import org.springframework.boot.jdbc.DataSourceBuilder;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.jdbc.core.JdbcTemplate;
+
+import javax.sql.DataSource;
 
 @Configuration
 public class JdbcConfiguration {

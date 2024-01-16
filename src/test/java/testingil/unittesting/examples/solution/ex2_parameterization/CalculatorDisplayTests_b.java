@@ -11,7 +11,7 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.util.stream.Stream;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.params.provider.Arguments.arguments;
 
 
@@ -47,14 +47,14 @@ public class CalculatorDisplayTests_b {
 
 	@Test
 	public void at_start_display_0() {
-		assertEquals(cd.getDisplay(), "0" );
+		assertThat(cd.getDisplay()).isEqualTo("0");
 	}
 
 	@ParameterizedTest
 	@MethodSource("press_displays_csv")
 	public void pressing_keys_and_displays(String keys, String result) throws Exception{
 		pressSequence(keys);
-		assertEquals(cd.getDisplay(), result);
+		assertThat(cd.getDisplay()).isEqualTo(result);
 	}
 
 	private void pressSequence(String sequence) throws Exception {

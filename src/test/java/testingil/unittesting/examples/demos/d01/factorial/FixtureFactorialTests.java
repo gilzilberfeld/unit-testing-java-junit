@@ -4,9 +4,8 @@ package testingil.unittesting.examples.demos.d01.factorial;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
-import testingil.unittesting.examples.demos.d01.factorial.Factorial;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.assertj.core.api.Assertions.assertThat;
 
 public class FixtureFactorialTests {
 
@@ -19,19 +18,20 @@ public class FixtureFactorialTests {
 
 	@Test
 	public void factorial_tests() {
-		assertEquals(factorial.calculate(1), 1);
-		assertEquals(factorial.calculate(2), 2);
-		assertEquals(factorial.calculate(3), 6 );
+		assertThat(Factorial.calculate(1)).isEqualTo(1);
+		assertThat(Factorial.calculate(2)).isEqualTo(2);
+		assertThat(Factorial.calculate(3)).isEqualTo(6);
+
 	}
 
 	@Disabled
 	@Test
 	public void negative_factorial() {
-		assertEquals(factorial.calculate(-3), 0);
+		assertThat(Factorial.calculate(-3)).isEqualTo(0);
 	}
 
 	@Test
 	public void big_factorial() {
-		assertEquals(factorial.calculate(10), 3628800);
+		assertThat(Factorial.calculate(10)).isEqualTo(3628800);
 	}
 }

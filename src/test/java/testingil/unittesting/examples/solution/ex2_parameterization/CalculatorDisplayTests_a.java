@@ -9,7 +9,7 @@ import org.junit.jupiter.params.provider.MethodSource;
 
 import java.util.stream.Stream;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.params.provider.Arguments.arguments;
 
 //  1. Add parameterized tests
@@ -24,7 +24,7 @@ public class CalculatorDisplayTests_a {
 
 	@Test
 	public void at_start_display_0() {
-				assertEquals(cd.getDisplay(), "0" );
+		assertThat(cd.getDisplay()).isEqualTo("0");
 	}
 
 	@ParameterizedTest
@@ -34,7 +34,7 @@ public class CalculatorDisplayTests_a {
 	})
 	public void pressing_keys_and_displays_csv(String keys, String result) throws Exception{
 		pressSequence(keys);
-		assertEquals(cd.getDisplay(), result);
+		assertThat(cd.getDisplay()).isEqualTo(result);
 	}
 
 
@@ -42,7 +42,7 @@ public class CalculatorDisplayTests_a {
 	@MethodSource ("press_displays")
 	public void pressing_keys_and_displays(String keys, String result) throws Exception{
 		pressSequence(keys);
-		assertEquals(cd.getDisplay(), result);
+		assertThat(cd.getDisplay()).isEqualTo(result);
 	}
 
 	static Stream<Arguments> press_displays(){

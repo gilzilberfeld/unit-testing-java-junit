@@ -3,8 +3,7 @@ package testingil.unittesting.examples.solution.ex3_mocking;
 import org.junit.jupiter.api.Test;
 import org.mockito.ArgumentCaptor;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.Mockito.*;
 
 // 3. Use Mockito
@@ -16,7 +15,7 @@ public class CalculatorDisplayTests_b {
 		when(display.isOn()).thenReturn(false);
 		CalculatorDisplay cd = new CalculatorDisplay(display);
 		cd.press("1");
-		assertFalse(cd.hasDisplayConnected);
+		assertThat(cd.hasDisplayConnected).isFalse();
 	}
 
 	@Test
@@ -37,6 +36,6 @@ public class CalculatorDisplayTests_b {
 		cd.press("1");
 		verify(display).show(argumentCaptor.capture());
 		String sentText = argumentCaptor.getValue();
-		assertEquals(sentText,"1");
+		assertThat(sentText).isEqualTo("1");
 	}
 }

@@ -1,7 +1,5 @@
 package testingil.unittesting.examples.demos.d04.spring.d02.mocking;
 
-import static org.junit.jupiter.api.Assertions.*;
-
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
@@ -10,6 +8,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.test.context.ContextConfiguration;
+
+import static org.assertj.core.api.Assertions.assertThat;
 
 @SpringBootTest
 @ContextConfiguration(classes = { ItemRepositoryConfiguration.class })
@@ -29,8 +29,8 @@ public class AutowiringMocksTest{
 	@Test
 	@Disabled
 	public void repository_is_created() {
-		assertNotNull(repository);
-		assertNotNull(repository.getTemplate());
-		assertNotNull(repository.getTemplate().getDataSource());
+		assertThat(repository).isNotNull();
+		assertThat(repository.getTemplate()).isNotNull();
+		assertThat(repository.getTemplate().getDataSource()).isNotNull();
 	}
 }

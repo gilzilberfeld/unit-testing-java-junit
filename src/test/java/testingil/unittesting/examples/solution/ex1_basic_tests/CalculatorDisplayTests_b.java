@@ -4,7 +4,7 @@ package testingil.unittesting.examples.solution.ex1_basic_tests;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.assertj.core.api.Assertions.assertThat;
 
 
 // 3. Refactor tests
@@ -35,7 +35,7 @@ public class CalculatorDisplayTests_b {
 	}
 
 	private void shouldDisplay(String s) {
-		assertEquals(cd.getDisplay(), s);
+		assertThat(cd.getDisplay()).isEqualTo(s);
 	}
 
 	private void pressSequence(String sequence) throws Exception {

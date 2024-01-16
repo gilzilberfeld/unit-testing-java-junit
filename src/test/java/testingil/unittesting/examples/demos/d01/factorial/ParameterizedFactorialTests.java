@@ -6,11 +6,10 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.CsvSource;
 import org.junit.jupiter.params.provider.MethodSource;
-import testingil.unittesting.examples.demos.d01.factorial.Factorial;
 
 import java.util.stream.Stream;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.assertj.core.api.Assertions.assertThat;
 
 public class ParameterizedFactorialTests {
 
@@ -28,13 +27,14 @@ public class ParameterizedFactorialTests {
     @Disabled("One of the cases fails")
     public void factorial_tests(int input, int result) {
         Factorial factorial = new Factorial();
-        assertEquals(factorial.calculate(input), result);
+        assertThat(factorial.calculate(input)).isEqualTo(result);
+
     }
 
     @ParameterizedTest
     @CsvSource({"1,1", "3,6"})
     public void factorial_tests_csv(int input, int result) {
         Factorial factorial = new Factorial();
-        assertEquals(factorial.calculate(input), result);
+        assertThat(factorial.calculate(input)).isEqualTo(result);
     }
 }

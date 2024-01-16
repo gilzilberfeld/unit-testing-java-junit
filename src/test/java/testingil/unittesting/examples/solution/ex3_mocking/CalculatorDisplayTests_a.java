@@ -3,8 +3,7 @@ package testingil.unittesting.examples.solution.ex3_mocking;
 
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.assertj.core.api.Assertions.assertThat;
 
 // 2. mock manually external display
 public class CalculatorDisplayTests_a {
@@ -15,7 +14,7 @@ public class CalculatorDisplayTests_a {
 		display.isOn = false;
 		CalculatorDisplay cd = new CalculatorDisplay(display);
 
-		assertFalse(cd.hasDisplayConnected);
+		assertThat(cd.hasDisplayConnected).isFalse();
 	}
 
 	@Test
@@ -24,7 +23,7 @@ public class CalculatorDisplayTests_a {
 		display.isOn = true;
 		CalculatorDisplay cd = new CalculatorDisplay(display);
 		cd.press("1");
-		assertEquals(display.getText(),"1");
+		assertThat(display.getText()).isEqualTo("1");
 	}
 
 }

@@ -1,18 +1,17 @@
 package testingil.unittesting.examples.demos.d02.mocking.mockito;
 
-import static org.junit.jupiter.api.Assertions.*;
-import static org.mockito.ArgumentMatchers.any;
-import static org.mockito.Mockito.atLeast;
-import static org.mockito.Mockito.mock;
-
 import org.junit.jupiter.api.Test;
 import org.mockito.ArgumentCaptor;
 import org.mockito.Mockito;
-
 import testingil.unittesting.examples.demos.d02.mocking.ACMode;
 import testingil.unittesting.examples.demos.d02.mocking.AirCondition;
 import testingil.unittesting.examples.demos.d02.mocking.Car;
 import testingil.unittesting.examples.demos.d02.mocking.Driver;
+
+import static org.assertj.core.api.Assertions.assertThat;
+import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.Mockito.atLeast;
+import static org.mockito.Mockito.mock;
 
 class Test_with_mockito_verification{
 
@@ -40,7 +39,7 @@ class Test_with_mockito_verification{
 		Mockito.verify(mockCar).setAC(acCaptor.capture());
 		
 		AirCondition ac = acCaptor.getValue();
-		assertEquals (ACMode.On, ac.getMode());
+		assertThat(ac.getMode()).isEqualTo(ACMode.On);
 	}
 
 }

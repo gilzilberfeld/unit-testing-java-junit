@@ -20,7 +20,6 @@ public class SingletonWithResetTest {
     @BeforeEach
     public void setup(){
         Mockito.reset(mockRepository);
-
     }
     @Test
     public void test_one_call() {

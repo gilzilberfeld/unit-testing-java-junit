@@ -2,6 +2,7 @@ package testingil.unittesting.examples.solution.ex4_refactoring.ex1.addlogging;
 
 import org.approvaltests.Approvals;
 import org.junit.jupiter.api.Test;
+
 import java.util.List;
 
 public class GildedRoseTests {

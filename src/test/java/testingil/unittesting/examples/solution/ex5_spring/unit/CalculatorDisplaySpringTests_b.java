@@ -5,11 +5,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.annotation.DirtiesContext;
 import org.springframework.test.context.ContextConfiguration;
-import org.springframework.test.context.testng.AbstractTestNGSpringContextTests;
 import testingil.unittesting.examples.solution.ex5_spring.CalculatorDisplay;
 import testingil.unittesting.examples.solution.ex5_spring.ExternalDisplay;
 
-import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
@@ -28,7 +27,7 @@ public class CalculatorDisplaySpringTests_b  {
     public void when_display_is_off_calc_not_connected() {
         when(display.isOn()).thenReturn(false);
         cd.press("1");
-        assertFalse(cd.hasDisplayConnected);
+        assertThat(cd.hasDisplayConnected).isFalse();
     }
 
     @Test
