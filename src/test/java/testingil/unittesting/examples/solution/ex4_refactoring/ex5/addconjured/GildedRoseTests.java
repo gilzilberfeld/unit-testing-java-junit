@@ -2,8 +2,6 @@ package testingil.unittesting.examples.solution.ex4_refactoring.ex5.addconjured;
 
 import org.approvaltests.Approvals;
 import org.junit.jupiter.api.Test;
-import testingil.unittesting.examples.exercise.e04.refactoring.GildedRose;
-import testingil.unittesting.examples.exercise.e04.refactoring.Item;
 
 import java.util.List;
 

@@ -25,7 +25,7 @@ public class GildedRoseTests {
         log += printItems();
         Item[] itemsArray =new Item[items.size()];
         items.toArray(itemsArray);
-        new GildedRose(itemsArray).updateQuality();
+        new GildedRose(itemsArray ).updateQuality();
         log += "\nAfter Update\n";
         log += printItems();
 

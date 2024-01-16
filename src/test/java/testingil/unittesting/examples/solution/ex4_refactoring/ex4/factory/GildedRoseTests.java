@@ -2,8 +2,6 @@ package testingil.unittesting.examples.solution.ex4_refactoring.ex4.factory;
 
 import org.approvaltests.Approvals;
 import org.junit.jupiter.api.Test;
-import testingil.unittesting.examples.exercise.e04.refactoring.GildedRose;
-import testingil.unittesting.examples.exercise.e04.refactoring.Item;
 
 import java.util.List;
 
@@ -23,7 +21,7 @@ public class GildedRoseTests {
     public void gilded_rose_30_days() {
         Item[] itemsArray =new Item[items.size()];
         items.toArray(itemsArray);
-        GildedRose gildedRose = new GildedRose(itemsArray);
+        GildedRose gildedRose = new GildedRose(itemsArray );
         String log ="";
 
         for( int day=0; day<30; day++){
