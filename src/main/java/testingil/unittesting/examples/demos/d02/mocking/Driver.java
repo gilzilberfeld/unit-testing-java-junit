@@ -14,7 +14,7 @@ public class Driver {
 		return !car.isRunning();
 	}
 
-	public boolean hasKeys() {
+	public static boolean hasKeys() {
 		return true;
 	}
 	
