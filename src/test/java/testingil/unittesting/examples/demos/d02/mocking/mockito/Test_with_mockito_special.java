@@ -1,9 +1,7 @@
 package testingil.unittesting.examples.demos.d02.mocking.mockito;
 
 import org.junit.jupiter.api.Test;
-import org.mockito.Answers;
-import org.mockito.ArgumentCaptor;
-import org.mockito.Mockito;
+import org.mockito.*;
 import testingil.unittesting.examples.demos.d02.mocking.ACMode;
 import testingil.unittesting.examples.demos.d02.mocking.AirCondition;
 import testingil.unittesting.examples.demos.d02.mocking.Car;
@@ -17,7 +15,7 @@ class Test_with_mockito_special {
 	@Test
 	void cannot_drive_without_keys() {
 		Driver driver = new Driver(null);
-		try( var mockHandler = mockStatic(Driver.class)){
+		try(MockedStatic<Driver> mockHandler = mockStatic(Driver.class)){
 			when(Driver.hasKeys()).thenReturn(false);
 			assertThat(driver.canDrive()).isFalse();
 		}
@@ -31,7 +29,7 @@ class Test_with_mockito_special {
 		ArgumentCaptor<AirCondition> acCaptor =
 				ArgumentCaptor.forClass(AirCondition.class);
 
-		try(var mockHandler = mockConstruction(AirCondition.class,
+		try(MockedConstruction<AirCondition> mockHandler = mockConstruction(AirCondition.class,
 				(mock,context)-> {
 			when(mock.getMode()).thenReturn(ACMode.Off);
 			}

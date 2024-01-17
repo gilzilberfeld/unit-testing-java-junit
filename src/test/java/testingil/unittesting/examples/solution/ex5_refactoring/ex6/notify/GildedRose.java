@@ -16,7 +16,7 @@ public class GildedRose {
     }
 
     private void updateItem(Item item) {
-        var storedItem = ItemFactory.getItemByName(item);
+        StoredItem storedItem = ItemFactory.getItemByName(item);
         storedItem.update();
         notifyService.notifyTownCrier(storedItem.message);
     }

@@ -2,6 +2,7 @@ package testingil.unittesting.examples.solution.ex3_mocking;
 
 import org.junit.jupiter.api.Test;
 import org.mockito.ArgumentCaptor;
+import org.mockito.MockedStatic;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.Mockito.*;
@@ -21,7 +22,7 @@ public class CalculatorDisplayTests_c {
 
 	@Test
 	public void when_plasma_is_on_display_is_correct_static() {
-		try (var mh = mockStatic(PlasmaScreen.class))
+		try (MockedStatic<PlasmaScreen> mh = mockStatic(PlasmaScreen.class))
 		{
 			when(PlasmaScreen.isOn()).thenReturn(true);
 			CalculatorDisplay_WithPlasma cd = new CalculatorDisplay_WithPlasma();
