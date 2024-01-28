@@ -3,7 +3,7 @@
  */
 
 plugins {
-    id 'java'
+    id 'java-library'
     id 'maven-publish'
 }
 
@@ -15,18 +15,18 @@ repositories {
 }
 
 dependencies {
-    implementation 'org.springframework.boot:spring-boot-starter-web:2.2.7.RELEASE'
-    implementation 'org.springframework.boot:spring-boot-starter-jdbc:2.2.7.RELEASE'
-    implementation 'org.apache.commons:commons-lang3:3.9'
-    implementation 'javax.persistence:javax.persistence-api:2.2'
-    implementation 'com.approvaltests:approvaltests:11.6.0'
-    testImplementation 'org.springframework.boot:spring-boot-starter-test:2.2.7.RELEASE'
+    api libs.org.springframework.boot.spring.boot.starter.web
+    api libs.org.springframework.boot.spring.boot.starter.jdbc
+    api libs.org.apache.commons.commons.lang3
+    api libs.jakarta.persistence.jakarta.persistence.api
+    api libs.com.approvaltests.approvaltests
+    testImplementation libs.org.springframework.boot.spring.boot.starter.test
 }
 
 group = 'testingil.courses.unittesting'
 version = '0.0.1-SNAPSHOT'
 description = 'exercises'
-java.sourceCompatibility = JavaVersion.VERSION_1_8
+java.sourceCompatibility = JavaVersion.VERSION_17
 
 publishing {
     publications {
@@ -38,4 +38,12 @@ publishing {
 
 tasks.withType(JavaCompile) {
     options.encoding = 'UTF-8'
+}
+
+tasks.withType(Javadoc) {
+    options.encoding = 'UTF-8'
+}
+
+test {
+    useJUnitPlatform()
 }
