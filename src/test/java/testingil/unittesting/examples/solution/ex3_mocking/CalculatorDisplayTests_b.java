@@ -6,7 +6,7 @@ import org.mockito.ArgumentCaptor;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.Mockito.*;
 
-// 3. Use Mockito
+// 2. Use Mockito
 public class CalculatorDisplayTests_b {
 
 	@Test
@@ -19,7 +19,7 @@ public class CalculatorDisplayTests_b {
 	}
 
 	@Test
-	public void when_display_is_on_display_is_correct() {
+	public void when_display_is_on_display_is_correct() throws Exception {
 		ExternalDisplay display = mock(ExternalDisplay.class);
 		when(display.isOn()).thenReturn(true);
 		CalculatorDisplay cd = new CalculatorDisplay(display);
@@ -28,7 +28,7 @@ public class CalculatorDisplayTests_b {
 	}
 
 	@Test
-	public void when_display_is_on_display_is_correct_with_arg_captor() {
+	public void when_display_is_on_display_is_correct_with_arg_captor() throws Exception {
 		ExternalDisplay display = mock(ExternalDisplay.class);
 		when(display.isOn()).thenReturn(true);
 		ArgumentCaptor<String> argumentCaptor = ArgumentCaptor.forClass(String.class);

@@ -1,5 +1,7 @@
 package testingil.unittesting.examples.solution.ex3_mocking;
 
+import ch.qos.logback.core.encoder.EchoEncoder;
+
 public class CalculatorDisplay {
 	private ExternalDisplay externalDisplay;
 	String display = "";
@@ -47,13 +49,18 @@ public class CalculatorDisplay {
 				display += key;
 			}
 		}
-		if (externalDisplay.isOn())
-			externalDisplay.show(getDisplay());
+		if (externalDisplay.isOn()) {
+			try {
+				externalDisplay.show(getDisplay());
+			} catch (Exception e) {
+				display = "E";
+			}
+		}
 		else
 			this.hasDisplayConnected = false;
 	}
 
-	private String getDisplay() {
+	public String getDisplay() {
 		if (display.equals(""))
 			return "0";
 		if (display.length() > 5)

@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-// 2. mock manually external display
+// 1. mock manually external display
 public class CalculatorDisplayTests_a {
 
 	@Test
