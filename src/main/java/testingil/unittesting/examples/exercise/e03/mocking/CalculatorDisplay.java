@@ -1,6 +1,6 @@
 package testingil.unittesting.examples.exercise.e03.mocking;
 
-public class Calculator {
+public class CalculatorDisplay {
 	String display = "";
 	int lastArgument = 0;
 	int result = 0; 
